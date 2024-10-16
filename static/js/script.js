@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const prompt = promptInput.value;
         const i2iMode = i2iButton.classList.contains('switch-on');
 
-        fetch('/api/execute_workflow', {
+        fetch('http://121.66.193.134:40205/api/execute_workflow', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,9 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log('Data:', data);
             if (data.base64_image) {
-                const imageUrl = `data:image/png;base64,${data.base64_image.ui}`;
+                const imageUrl = `data:image/png;base64,${data.base64_image.ui.images[0]}`;
                 console.log(imageUrl)
-                res
                 resultImage.style.backgroundImage = `url(${imageUrl})`;
                 resultImage.style.backgroundSize = 'cover'; // Optional: to cover the entire element
                 // window.open(imageUrl); // Optional: open the image in a new tab
