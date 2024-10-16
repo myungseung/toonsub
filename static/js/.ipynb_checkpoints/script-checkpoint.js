@@ -1,0 +1,72 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const i2iButton = document.getElementById('i2i-button');
+    const textButton = document.getElementById('text-button');
+    const uploadBlock = document.querySelector('.input-image');
+    const promptInput = document.querySelector('.prompt-input');
+    const drawButton = document.querySelector('.draw-button');
+    const resultImage = document.querySelector('.result-image');
+
+    function toggleMode(isI2iMode) {
+        if (isI2iMode) {
+            i2iButton.classList.add('switch-on');
+            i2iButton.classList.remove('switch-off');
+            textButton.classList.add('switch-off');
+            textButton.classList.remove('switch-on');
+            uploadBlock.style.display = 'flex'; // Show upload block
+        } else {
+            i2iButton.classList.add('switch-off');
+            i2iButton.classList.remove('switch-on');
+            textButton.classList.add('switch-on');
+            textButton.classList.remove('switch-off');
+            uploadBlock.style.display = 'none'; // Hide upload block
+        }
+    }
+
+    i2iButton.addEventListener('click', function() {
+        toggleMode(true);
+    });
+
+    textButton.addEventListener('click', function() {
+        toggleMode(false);
+    });
+
+    drawButton.addEventListener('click', function() {
+        const prompt = promptInput.value;
+        const i2iMode = i2iButton.classList.contains('switch-on');
+
+        fetch('/api/execute_workflow', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                prompt: prompt,
+                denoise: 1,
+                i2i_mode: i2iMode
+            })
+        })
+        .then(response => {
+            console.log('Response:', response);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data:', data);
+            if (data.image_url) {
+window.open(data.image_url);
+                
+                const image = new Image(data.image_url);
+                resultImage.src = data.image_url;
+                window.open(data.image_url);
+                // resultImage.style.backgroundImage = `url("${data.image_url}")`;
+                // resultImage.style.backgroundSize = 'cover';
+                // resultImage.innerHTML = ''; // Remove loader and text
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+
+    // Initialize with text mode active
+    toggleMode(false);
+});
+
+console.log('script.js loaded');

@@ -1,0 +1,328 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: var(--visualelectriccom-semantic-textarea-font-family, "PretendardVariable-Regular", sans-serif);
+}
+
+.app,
+.app * {
+  box-sizing: border-box;
+}
+.app {
+  background: #e9e9e9;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.instance {
+  padding: 40px 24px 40px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.input-image {
+  background: #ffffff;
+  border-radius: 8px;
+  border-style: dashed;
+  border-color: #0cc237;
+  border-width: 1.5px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 400px;
+  min-width: 200px;
+  max-width: 400px;
+  position: relative;
+}
+.cloud-upload {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.input-text {
+  color: var(--visualelectriccom-tarawera, #083547);
+  text-align: center;
+  font-family: var(
+    --visualelectriccom-semantic-textarea-font-family,
+    "PretendardVariable-Regular",
+    sans-serif
+  );
+  font-size: var(--visualelectriccom-semantic-textarea-font-size, 12.59375px);
+  line-height: var(--visualelectriccom-semantic-textarea-line-height, 18px);
+  font-weight: var(--visualelectriccom-semantic-textarea-font-weight, 400);
+  position: relative;
+  width: 100%;
+  max-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.result-image {
+  background: #cccccc;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 400px;
+  min-width: 200px;
+  max-width: 400px;
+  position: relative;
+}
+.frame-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.loading {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.nav-bottom {
+  background: #ffffff;
+  border-radius: 24px;
+  border-style: solid;
+  border-color: #ededed;
+  border-width: 1px;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: calc(100% - 24px); /* Full width minus left and right margins */
+  max-width: 604px; /* Maintain max width */
+  height: 76px;
+  position: fixed; /* Fix the nav bar at the bottom */
+  bottom: 12px; /* Margin from the bottom */
+  left: 12px; /* Margin from the left */
+  right: 12px; /* Margin from the right */
+  margin: 0 auto 24px; /* Center horizontally */
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+.button-text {
+  background: #0cc237;
+  border-radius: 8px;
+  padding: 8px 9.25px 8px 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 41.25px;
+  height: 40px;
+  position: relative;
+}
+.image {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.button-text2 {
+  border-radius: 8px;
+  padding: 8px 9.25px 8px 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 41.23px;
+  height: 40px;
+  position: relative;
+}
+.format-text {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.background-shadow {
+  background: var(--color-white-solid, #ffffff);
+  border-radius: 8px;
+  padding: 4px 12px 4px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  height: 40px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.input-text2 {
+  color: var(--visualelectriccom-tarawera, #083547);
+  text-align: left;
+  font-family: var(
+    --visualelectriccom-semantic-textarea-font-family,
+    "PretendardVariable-Regular",
+    sans-serif
+  );
+  font-size: var(--visualelectriccom-semantic-textarea-font-size, 12.59375px);
+  line-height: var(--visualelectriccom-semantic-textarea-line-height, 18px);
+  font-weight: var(--visualelectriccom-semantic-textarea-font-weight, 400);
+  position: relative;
+  flex: 1; /* Allow input to grow */
+  min-width: 0; /* Prevent overflow */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.prompt-input {
+    width: 100%;
+}
+.queue-prompt {
+  background: var(--visualelectriccom-vermilion, #0cc237);
+  border-radius: 8px;
+  padding: 4px 12px 4px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.brush {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+  fill: white; /* Ensure the icon is white */
+}
+.draw {
+  color: var(--color-white-solid, #ffffff);
+  text-align: left;
+  font-family: var(--font-family-font-1, "PretendardVariable-Bold", sans-serif);
+  font-size: 13px;
+  line-height: var(--line-height-18, 18px);
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Remove outline on focus */
+input:focus, textarea:focus, select:focus, button:focus {
+    outline: none;
+    /* Add custom focus styles for accessibility */
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.button-toggle-default {
+    background: none;
+    border-radius: 8px;
+    padding: 8px 9.25px 8px 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 41.25px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.button-toggle-default .svg-path {
+    fill: var(--visualelectriccom-tarawera, gray); /* Default color for inactive state */
+}
+
+.button-toggle-default.switch-on .svg-path {
+    fill: white; /* Color for active state */
+}
+
+.switch-on {
+  background: var(--visualelectriccom-vermilion); /* Vermilion background for active state */
+}
+
+.switch-off img {
+    filter: grayscale(100%); /* Gray icon for inactive state */
+    color: gray; /* Define the svg image color as gray */
+}
+
+.switch-on img {
+  filter: none; /* White icon for active state */
+}
+
+@media (max-width: 768px) {
+    .nav-bottom {
+        padding: 8px 16px;
+        gap: 4px;
+    }
+}
+
+.draw-button {
+  background: #0cc237; /* Green background */
+  border-radius: 8px;
+  padding: 8px 16px; /* Adjust padding for better click area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  height: 40px;
+}
+
+.draw-button:hover {
+  background: #0a9b2d; /* Darker green on hover */
+}
+
+.draw {
+  color: #ffffff; /* White text */
+  font-family: "PretendardVariable-Bold", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 8px; /* Space between icon and text */
+}
+
+.brush {
+  width: 16px;
+  height: 16px;
+  color: white; /* Ensure the icon is white */
+}

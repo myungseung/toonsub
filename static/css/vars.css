@@ -1,0 +1,39 @@
+/* Figma Styles of your File */
+:root {
+  /* Colors */
+  --visualelectriccom-tarawera: #083547;
+  --visualelectriccom-tarawera-5: rgba(8, 53, 71, 0.05);
+  --visualelectriccom-tarawera-50: rgba(8, 53, 71, 0.5);
+  --visualelectriccom-vermilion: #0cc237;
+  --visualelectriccom-vermilion-10: rgba(255, 60, 0, 0.1);
+  --visualelectriccom-white: #ffffff;
+  --visualelectriccom-white-90: rgba(255, 255, 255, 0.9);
+
+  /* Fonts */
+  --visualelectriccom-semantic-button-font-family: PretendardVariable-Regular,
+    sans-serif;
+  --visualelectriccom-semantic-button-font-size: 12.59375px;
+  --visualelectriccom-semantic-button-line-height: normal;
+  --visualelectriccom-semantic-button-font-weight: 400;
+  --visualelectriccom-semantic-button-font-style: normal;
+  --visualelectriccom-semantic-button-font-family: PretendardVariable-Regular,
+    sans-serif;
+  --visualelectriccom-semantic-button-font-size: 12.796875px;
+  --visualelectriccom-semantic-button-line-height: normal;
+  --visualelectriccom-semantic-button-font-weight: 400;
+  --visualelectriccom-semantic-button-font-style: normal;
+  --visualelectriccom-semantic-button-font-family: PretendardVariable-Regular,
+    sans-serif;
+  --visualelectriccom-semantic-button-font-size: 13px;
+  --visualelectriccom-semantic-button-line-height: normal;
+  --visualelectriccom-semantic-button-font-weight: 400;
+  --visualelectriccom-semantic-button-font-style: normal;
+  --visualelectriccom-semantic-textarea-font-family: PretendardVariable-Regular,
+    sans-serif;
+  --visualelectriccom-semantic-textarea-font-size: 12.59375px;
+  --visualelectriccom-semantic-textarea-line-height: 18px;
+  --visualelectriccom-semantic-textarea-font-weight: 400;
+  --visualelectriccom-semantic-textarea-font-style: normal;
+
+  /* Effects */
+}
