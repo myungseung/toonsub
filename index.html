@@ -6,22 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="static/css/vars.css">
   <link rel="stylesheet" href="static/css/style.css">
-  <style>
-    a, button, input, select, h1, h2, h3, h4, h5, * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      border: none;
-      text-decoration: none;
-      background: none;
-      -webkit-font-smoothing: antialiased;
-    }
-    menu, ol, ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
   <title>Document</title>
 </head>
 <body>
@@ -34,27 +18,31 @@
       <img class="result-image" />
     </div>
     <div class="nav-bottom">
-      <div id="i2i-button" class="button-toggle-default switch-off">
-        <svg class="image" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="svg-path" d="M9.26001 13.5L11.76 16.5L15.26 12L19.76 18H5.76001M21.76 19V5C21.76 3.89 20.86 3 19.76 3H5.76001C5.22958 3 4.72087 3.21071 4.3458 3.58579C3.97072 3.96086 3.76001 4.46957 3.76001 5V19C3.76001 19.5304 3.97072 20.0391 4.3458 20.4142C4.72087 20.7893 5.22958 21 5.76001 21H19.76C20.2904 21 20.7992 20.7893 21.1742 20.4142C21.5493 20.0391 21.76 19.5304 21.76 19Z" fill="currentColor"/>
-        </svg>
-      </div>
-      <div id="text-button" class="button-toggle-default switch-off">
-        <svg class="format-text" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="svg-path" d="M18.5 4L19.66 8.35L18.7 8.61C18.25 7.74 17.79 6.87 17.26 6.43C16.73 6 16.11 6 15.5 6H13V16.5C13 17 13 17.5 13.33 17.75C13.67 18 14.33 18 15 18V19H8.99997V18C9.66997 18 10.33 18 10.67 17.75C11 17.5 11 17 11 16.5V6H8.49997C7.88997 6 7.26997 6 6.73997 6.43C6.20997 6.87 5.74997 7.74 5.29997 8.61L4.33997 8.35L5.49997 4H18.5Z" fill="currentColor"/>
-        </svg>
-      </div>
-      <div class="background-shadow">
+      <div class="prompt">
         <input type="text" class="prompt-input" placeholder="Enter your prompt here" value="a woman sitting in a coffee shop" />
       </div>
-      <div class="draw-button">
-        <svg class="brush" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14.0466 3.08669L13.1532 2.19335C12.9066 1.93335 12.4732 1.93335 12.2132 2.19335L6.23991 8.16669L8.07324 10L14.0466 4.02669C14.3066 3.76669 14.3066 3.33335 14.0466 3.08669ZM4.90658 9.33335C4.37614 9.33335 3.86743 9.54407 3.49236 9.91914C3.11729 10.2942 2.90658 10.8029 2.90658 11.3334C2.90658 12.2067 2.13324 12.6667 1.57324 12.6667C2.18658 13.48 3.23991 14 4.23991 14C4.94715 14 5.62543 13.7191 6.12553 13.219C6.62562 12.7189 6.90658 12.0406 6.90658 11.3334C6.90658 10.8029 6.69586 10.2942 6.32079 9.91914C5.94572 9.54407 5.43701 9.33335 4.90658 9.33335Z" fill="currentColor"/>
-        </svg>
-        <div class="draw">Draw</div>
-      </div>
+      <div class="actions">
+        <div class="option-group">
+          <div id="i2i-button" class="button-toggle-default switch-off">
+            <svg class="image" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="svg-path" d="M9.26001 13.5L11.76 16.5L15.26 12L19.76 18H5.76001M21.76 19V5C21.76 3.89 20.86 3 19.76 3H5.76001C5.22958 3 4.72087 3.21071 4.3458 3.58579C3.97072 3.96086 3.76001 4.46957 3.76001 5V19C3.76001 19.5304 3.97072 20.0391 4.3458 20.4142C4.72087 20.7893 5.22958 21 5.76001 21H19.76C20.2904 21 20.7992 20.7893 21.1742 20.4142C21.5493 20.0391 21.76 19.5304 21.76 19Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div id="text-button" class="button-toggle-default switch-off">
+            <svg class="format-text" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="svg-path" d="M18.5 4L19.66 8.35L18.7 8.61C18.25 7.74 17.79 6.87 17.26 6.43C16.73 6 16.11 6 15.5 6H13V16.5C13 17 13 17.5 13.33 17.75C13.67 18 14.33 18 15 18V19H8.99997V18C9.66997 18 10.33 18 10.67 17.75C11 17.5 11 17 11 16.5V6H8.49997C7.88997 6 7.26997 6 6.73997 6.43C6.20997 6.87 5.74997 7.74 5.29997 8.61L4.33997 8.35L5.49997 4H18.5Z" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="draw-button">
+          <img class="draw-icon">
+          <div class="draw">Draw</div>
+        </div>
+      </div>  
     </div>
+    
   </div>
-  <script src="static/js/script.js"></script>
+<script src="static/js/script.js"></script>
 </body>
 </html>

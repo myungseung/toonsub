@@ -4,6 +4,20 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: var(--visualelectriccom-semantic-textarea-font-family, "PretendardVariable-Regular", sans-serif);
 }
+a, button, input, select, h1, h2, h3, h4, h5, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+}
+menu, ol, ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 .app,
 .app * {
@@ -15,7 +29,6 @@ body {
   flex-direction: column;
   gap: 4px;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -100,38 +113,13 @@ body {
   flex-shrink: 0;
   position: relative;
 }
-.loading {
+/* .loading {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
   position: relative;
   overflow: visible;
-}
-.nav-bottom {
-  background: #ffffff;
-  border-radius: 24px;
-  border-style: solid;
-  border-color: #ededed;
-  border-width: 1px;
-  padding: 12px 24px;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: calc(100% - 24px); /* Full width minus left and right margins */
-  max-width: 604px; /* Maintain max width */
-  height: 76px;
-  position: fixed; /* Fix the nav bar at the bottom */
-  bottom: 12px; /* Margin from the bottom */
-  left: 12px; /* Margin from the left */
-  right: 12px; /* Margin from the right */
-  margin: 0 auto 24px; /* Center horizontally */
-  overflow: hidden;
-  box-sizing: border-box;
-  z-index: 1000; /* Ensure it stays on top of other elements */
-}
+} */
 .button-text {
   background: #0cc237;
   border-radius: 8px;
@@ -152,19 +140,6 @@ body {
   height: 24px;
   position: relative;
   overflow: visible;
-}
-.button-text2 {
-  border-radius: 8px;
-  padding: 8px 9.25px 8px 8px;
-  display: flex;
-  flex-direction: row;
-  gap: 0px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 41.23px;
-  height: 40px;
-  position: relative;
 }
 .format-text {
   flex-shrink: 0;
@@ -189,24 +164,7 @@ body {
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-.input-text2 {
-  color: var(--visualelectriccom-tarawera, #083547);
-  text-align: left;
-  font-family: var(
-    --visualelectriccom-semantic-textarea-font-family,
-    "PretendardVariable-Regular",
-    sans-serif
-  );
-  font-size: var(--visualelectriccom-semantic-textarea-font-size, 12.59375px);
-  line-height: var(--visualelectriccom-semantic-textarea-line-height, 18px);
-  font-weight: var(--visualelectriccom-semantic-textarea-font-weight, 400);
-  position: relative;
-  flex: 1; /* Allow input to grow */
-  min-width: 0; /* Prevent overflow */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+
 .prompt-input {
     width: 100%;
 }
@@ -325,3 +283,107 @@ input:focus, textarea:focus, select:focus, button:focus {
   height: 16px;
   color: white; /* Ensure the icon is white */
 }
+
+.nav-bottom,
+.nav-bottom * {
+  box-sizing: border-box;
+}
+.nav-bottom {
+  width: 100%;
+  bottom: 0;
+  background: #ffffff;
+  border-style: solid;
+  border-color: #ededed;
+  border-width: 1px;
+  padding: 12px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  overflow: hidden;
+}
+
+.prompt {
+  background: var(--color-white-solid, #ffffff);
+  border-radius: 8px;
+  padding: 4px 0px 4px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 52px;
+  position: relative;
+  overflow: hidden;
+}
+.prompt-input {
+  color: var(--visualelectriccom-tarawera, #083547);
+  text-align: left;
+  font-family: var(
+    --font-family-font-1,
+    "PretendardVariable-Regular",
+    sans-serif
+  );
+  font-size: 18px;
+  line-height: var(--line-height-18, 18px);
+  font-weight: var(--font-weight-400, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.option-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.draw-button.loading {
+  background: gray;
+  pointer-events: none;
+}
+
+.draw-button.loading .draw-icon {
+  content: url('/static/img/loading0.svg');
+}
+
+.draw-button .draw-icon {
+  content: url('/static/img/brush0.svg');
+}
+
+.draw-icon {
+  width: 20px;
+}
+
+.draw-button.loading .draw-icon {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

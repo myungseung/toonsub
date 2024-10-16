@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     drawButton.addEventListener('click', function() {
+        drawButton.classList.add('loading'); // Add loading class
         const prompt = promptInput.value;
         const i2iMode = i2iButton.classList.contains('switch-on');
 
@@ -59,7 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // window.open(imageUrl); // Optional: open the image in a new tab
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error))
+        .finally(() => {
+            drawButton.classList.remove('loading'); // Remove loading class
+        });
     });
 
     // Initialize with text mode active
