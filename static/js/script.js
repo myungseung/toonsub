@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const prompt = promptInput.value;
         const i2iMode = i2iButton.classList.contains('switch-on');
 
-        fetch('http://121.66.193.134:40205/api/execute_workflow', {
+        fetch('https://9dc0-121-66-193-134.ngrok-free.app/api/execute_workflow', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
