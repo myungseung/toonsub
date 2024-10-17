@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const prompt = promptInput.value;
         const i2iMode = i2iButton.classList.contains('switch-on');
 
-        fetch('https://9dc0-121-66-193-134.ngrok-free.app/api/execute_workflow', {
+        fetch('https://6ca0-121-66-193-134.ngrok-free.app/api/execute_workflow', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function checkAPIStatus() {
         console.log('Checking API status...');
-        fetch('https://9dc0-121-66-193-134.ngrok-free.app/api/test')
+        fetch('https://6ca0-121-66-193-134.ngrok-free.app/api/test')
             .then(response => {
                 console.log('API response status:', response.status);
                 return response.status; // Change this to text() instead of json()

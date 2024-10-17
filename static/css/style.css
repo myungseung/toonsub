@@ -387,3 +387,40 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+.status-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  background-color: #0cc237;
+  height:4px;
+}
+.status-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1px;
+  max-width: fit-content;
+  width: 100%;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0cc237; /* Green for 'Connected' status */
+  margin-right: 6px;
+}
+
+.status-text {
+  color: #fff;
+}
+
+.status-block.disconnected {
+  background-color: #ff0000; /* Red border for 'Disconnected' status */
+}
+
+/* .status-button.disconnected .status-indicator {
+  background-color: #ff0000; /* Red for 'Disconnected' status }*/
