@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const promptInput = document.querySelector('.prompt-input');
     const drawButton = document.querySelector('.draw-button');
     const resultImage = document.querySelector('.result-image');
+    const statusBlock = document.querySelector('.status-block');
+    const statusButton = document.querySelector('.status-button');
+    const statusText = statusButton.querySelector('.status-text');
 
     function toggleMode(isI2iMode) {
         if (isI2iMode) {
@@ -65,6 +68,43 @@ document.addEventListener('DOMContentLoaded', function() {
             drawButton.classList.remove('loading'); // Remove loading class
         });
     });
+
+    function checkAPIStatus() {
+        console.log('Checking API status...');
+        fetch('https://9dc0-121-66-193-134.ngrok-free.app/api/test')
+            .then(response => {
+                console.log('API response status:', response.status);
+                return response.status; // Change this to text() instead of json()
+            })
+            .then(status => {
+                console.log('API response text:', status);
+                try {
+                    if (status === 200) {
+                        console.log('API status is 200, setting to Connected');
+                        statusBlock.classList.remove('disconnected');
+                        statusText.textContent = 'Connected';
+                    } else {
+                        console.log('API status is not 200, setting to Disconnected');
+                        statusBlock.classList.add('disconnected');
+                        statusText.textContent = 'Disconnected';
+                    }
+                } catch (error) {
+                    statusBlock.classList.add('disconnected');
+                    statusText.textContent = 'Disconnected';
+                }
+            })
+            .catch(error => {
+                console.error('Error checking API status:', error);
+                statusBlock.classList.add('disconnected');
+                statusText.textContent = 'Disconnected';
+            });
+    }
+
+    // Check API status every 10 minutes
+    setInterval(checkAPIStatus, 600000);
+
+    // Initial check when the page loads
+    checkAPIStatus();
 
     // Initialize with text mode active
     toggleMode(false);
